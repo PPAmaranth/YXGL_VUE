@@ -8,7 +8,7 @@ export default {
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',
-      visible: false 
+      visible: false
     }
   }
 }
@@ -16,8 +16,8 @@ export default {
 <style lang="less">
 	@import '../style/mixin';
 	.header_container{
-		background-color: @red;
-		height: 90px;
+		background-color: @blue;
+		height: 60px;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
