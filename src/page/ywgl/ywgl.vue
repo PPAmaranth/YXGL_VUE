@@ -2,7 +2,7 @@
     <div>
       <div class="wrapper">
         <el-tabs type="border-card" class="content">
-          <el-tab-pane v-for="item in tab_nav" :label="item.name">我是{{item.name}}</el-tab-pane>
+          <el-tab-pane v-for="item in tab_nav" :label="item.name" :key="item.key">我是{{item.name}}</el-tab-pane>
         </el-tabs>
       </div>
     </div>
@@ -15,34 +15,44 @@
             return {
               tab_nav:[
                 {
-                  name:'业务报告'
+                  name:'业务报告',
+                  key:'1'
                 },
                 {
-                  name:'行政申请'
+                  name:'行政申请',
+                  key:'2'
                 },
                 {
-                  name:'工作日志'
+                  name:'工作日志',
+                  key:'3'
                 },
                 {
-                  name:'价格申请'
+                  name:'价格申请',
+                  key:'4'
                 },
                 {
-                  name:'退货申请'
+                  name:'退货申请',
+                  key:'5'
                 },
                 {
-                  name:'换货申请'
+                  name:'换货申请',
+                  key:'6'
                 },
                 {
-                  name:'赠品申请'
+                  name:'赠品申请',
+                  key:'7'
                 },
                 {
-                  name:'业务批阅'
+                  name:'业务批阅',
+                  key:'8'
                 },
                 {
-                  name:'行政批阅'
+                  name:'行政批阅',
+                  key:'9'
                 },
                 {
-                  name:'日志分享'
+                  name:'日志分享',
+                  key:'10'
                 }
               ]
             }
@@ -60,37 +70,39 @@
         border:none;
         border-bottom:1px solid #d2d2d2;
         height:670px;
-        box-shadow:0px 4px 4px 0 rgba(0,0,0,.12), 0 0 0 0 rgba(0,0,0,.04);
+        /*box-shadow:0px 4px 4px 0 rgba(0,0,0,.12), 0 0 0 0 rgba(0,0,0,.04);*/
+        box-shadow:none;
         /deep/ #tab-3,/deep/ #tab-7{
-          margin-left:40px;
+          margin-left:20px;
         }
         /deep/ .el-tabs__header{
-          background: #e9f3fd;
+          background: #fff;
         }
         /deep/ .el-tabs__item{
           margin:0px;
+          border:1px solid #d2d2d2;
           border-bottom:none;
-          background-color: #cae6fb;
+          background-color: #fff;
           margin-right:2px;
-          border-top-left-radius:10px;
-          border-top-right-radius:10px;
-          color:#000;
+          font-size:14px;
+          /*border-top-left-radius:10px;*/
+          /*border-top-right-radius:10px;*/
+          color:#048e50;
         }
         /deep/ .is-active{
-          border:1px solid #d2d2d2;
+          border:1px solid #048e50;
           border-bottom:none;
-          background: #fff;
+          background: #048e50;
+          color:#fff;
         }
         /deep/ .el-tabs__item:hover{
-          border:1px solid #d2d2d2;
+          border:1px solid #048e50;
           border-bottom:none;
-          color:#000!important;
-          background: #fff;
+          background: #048e50;
+          color:#fff;
         }
         /deep/ .el-tabs__content{
-          border-left:1px solid #d2d2d2;
-          border-right:1px solid #d2d2d2;
-          border-bottom:1px solid #d2d2d2;
+          border:1px solid #048e50;
           min-height: 600px;
         }
       }

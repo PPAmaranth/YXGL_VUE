@@ -2,14 +2,13 @@
 	<div class="nav_container">
     <div class="top"></div>
     <el-menu
-      default-active="1"
+      :default-active="this.$parent.nowcomponent"
       class="el-menu-vertical-demo"
-      background-color="#cae6fb"
+      background-color="#d8f7e8"
       text-color="#000000"
-      active-text-color="#000000">
-      <el-menu-item v-for="item in nav_menu" index="item.url" :key="item.url">
-        <i :class="item.icon"></i>
-        <span slot="title">{{item.name}}</span>
+      @select="handleSelect">
+      <el-menu-item v-for="item in nav_menu" :index="item.url" :key="item.url">
+        <span style="position:relative;" slot="title">{{item.name}}<div class="triangle_border_right"></div></span>
       </el-menu-item>
     </el-menu>
   </div>
@@ -22,52 +21,44 @@ export default {
 	    return {
         nav_menu:[
           {
-            name:'业务管理',
-            icon:'el-icon-menu',
-            url:'1'
+            name:'业务办公',
+            url:'ywgl'
           },{
             name:'订单管理',
-            icon:'el-icon-menu',
-            url:'2'
+            url:'ddgl'
           },{
             name:'合同管理',
-            icon:'el-icon-menu',
-            url:'3'
+            url:'htgl'
           },{
             name:'销售管理',
-            icon:'el-icon-menu',
-            url:'4'
+            url:'xsgl'
           },{
             name:'物流管理',
-            icon:'el-icon-menu',
-            url:'5'
+            url:'wlgl'
           },
           {
             name:'客户管理',
-            icon:'el-icon-menu',
-            url:'6'
+            url:'khgl'
           },{
             name:'市场管理',
-            icon:'el-icon-menu',
-            url:'7'
+            url:'scgl'
           },{
             name:'费用管理',
-            icon:'el-icon-menu',
-            url:'8'
+            url:'fygl'
           },{
             name:'团队管理',
-            icon:'el-icon-menu',
-            url:'9'
+            url:'tdgl'
           },{
             name:'经营分析',
-            icon:'el-icon-menu',
-            url:'10'
+            url:'jyfx'
           }
         ]
       }
 	},
   methods: {
-
+    handleSelect(key,keyPath,event) {
+      this.$parent.nowcomponent = key
+    }
   }
 }
 </script>
@@ -77,15 +68,43 @@ export default {
     width:100%;
   }
   .top{
-    height:65px;
-    background-color:#0f97fa ;
+    height:60px;
+    background-color:#005826;
   }
   /deep/ .el-menu{
     .is-active{
-      background:#e9f3fd;
+      background: #048e50!important;
+      span{
+        color:#fff;
+        .triangle_border_right{
+          border-color:transparent transparent transparent #fff;
+        }
+      }
+    }
+    li{
+      text-align: center;
+      span{
+        font-size: 16px;
+      }
     }
     li:hover{
-      background: #e9f3fd!important;
+      background: #048e50!important;
+      span{
+        color:#fff;
+        .triangle_border_right{
+          border-color:transparent transparent transparent #fff;
+        }
+      }
     }
+  }
+  .triangle_border_right{
+    width:0;
+    height:0;
+    border-width:4px 0 4px 6px;
+    border-style:solid;
+    border-color:transparent transparent transparent #83c4a4;/*透明 透明 透明 灰*/
+    position:absolute;
+    right:-16px;
+    top:6px;
   }
 </style>

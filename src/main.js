@@ -17,73 +17,8 @@ Vue.use(VueDND)
 Vue.use(Vuex)
 /* eslint-disable no-new */
 
-const store = new Vuex.Store({
-  state: {
-    myList: [{
-      'id': 1,
-      'name': '组件1',
-      'x': 1,
-      'y': 1,
-      'sizex': 5,
-      'sizey': 2,
-      'component': 'zj1',
-      'isshow': true
-    }, {
-      'id': 2,
-      'name': '组件2',
-      'x': 6,
-      'y': 1,
-      'sizex': 5,
-      'sizey': 2,
-      'component': 'zj2',
-      'isshow': true
-    }, {
-      'id': 3,
-      'name': '组件3',
-      'x': 1,
-      'y': 3,
-      'sizex': 5,
-      'sizey': 2,
-      'component': 'zj3',
-      'isshow': true
-    }, {
-      'id': 4,
-      'name': '组件4',
-      'x': 6,
-      'y': 3,
-      'sizex': 5,
-      'sizey': 2,
-      'component': 'zj4',
-      'isshow': true
-    },{
-      'id': 5,
-      'name': '凭证2',
-      'x': 6,
-      'y': 5,
-      'sizex': 5,
-      'sizey': 2,
-      'component': 'pz2',
-      'isshow': false
-    }]
-  },
-  getters: {
-    showList: state => {
-      return state.myList.filter(todo => todo.isshow)
-    },
-    controlList: state => {
-      return state.myList
-    }
-  },
-  mutations: {
-    updateMessage (state, message) {
-      state.myList = message
-    }
-  }
-})
-
 new Vue({
   el: '#app',
-  store,
   render: h => h(App),
   router,
   components: { App },
